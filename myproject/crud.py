@@ -7,6 +7,9 @@ from schemas import FilmCreate, PersonCreate, StarshipCreate
 
 # CRUD operations for films
 def create_film(db: Session, film: FilmCreate):
+    existing_film = db.query(models.Film).filter(models.Film.title == film.title).first()
+    if existing_film:
+        return None
     db_film = Film(**film.dict())
     db.add(db_film)
     db.commit()
@@ -16,6 +19,9 @@ def create_film(db: Session, film: FilmCreate):
 
 # CRUD operations for persons
 def create_person(db: Session, person: PersonCreate):
+    existing_person = db.query(models.Person).filter(models.Person.film_id == person.film_id, models.Person.name == person.name).first()
+    if existing_person:
+        return None
     db_person = Person(**person.dict())
     db.add(db_person)
     db.commit()
@@ -25,6 +31,9 @@ def create_person(db: Session, person: PersonCreate):
 
 # CRUD operations for starships
 def create_starship(db: Session, starship: StarshipCreate):
+    existing_starship = db.query(models.Starship).filter(models.Starship.film_id == starship.film_id, models.Starship.name == starship.name).first()
+    if existing_starship:
+        return None
     db_starship = Starship(**starship.dict())
     db.add(db_starship)
     db.commit()
