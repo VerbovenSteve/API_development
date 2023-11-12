@@ -27,14 +27,18 @@ In het volgende deel zal ik alle functies laten zien van de interface.
 > we beginnen bij de post requests. Dit wil zeggen het opvullen van de verschillende tabellen
 ## post 
 
-post /films
+### post /films
+
 Deze post zal zorgen dat we een film in de databank kunnen zetten
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/5c03458c-620a-4ed0-aeda-50cc14dc322a)
 
-post /persons
+### post /persons
+
 Deze post zorgt ervoor dat we een personage kunnen toevoegen aan een bepaald film id.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/fd733bfd-647c-4305-ba45-c99b5521e478)
 
-post /starships
+### post /starships
+
+Deze post zal starships toevoegen aan een film via de film id.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/1f3f1c6b-1361-4d55-8179-c9b5afe2daef)
 
