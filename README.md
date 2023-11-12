@@ -16,6 +16,7 @@ In de databank zitten 3 tabellen:
 1. Films
 2. Persons
 3. Starships
+
 In de databank kunnen kan je per film de personages en de Starships toevoegen. Via de Api kan je zowel ze oproepen of verwijderen en je kan ook de volledige database in zijn geheel ophalen.
 
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/11a26828-1db3-436a-aa37-368fae0a41c3)
@@ -62,6 +63,7 @@ Als er een bepaald starship al in de database staat dan zal er een error gegener
 
 
 > we zullen nu verder gaan met de get requests. Dit wil zeggen dat we verschillende items uit de tabellen gaan halen.
+
 ## get
 
 ### get /films
@@ -101,6 +103,10 @@ Als je verkeerde skip en limit ingeeft voor de id van de starship krijg je een e
 
 Deze request haalt heel de database op met alle films, personages en starships.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/c964119b-af2e-4634-a43c-5d5dd7e72e54)
+
+> Als laatste gaan we verder met de delete requests.
+
+
 
 
 
