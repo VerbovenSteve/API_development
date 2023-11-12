@@ -1,5 +1,5 @@
 import os.path
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from database import engine, SessionLocal
 import crud
@@ -31,6 +31,7 @@ def read_films(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_ses
     return {"films": films}
 
 
+
 # Endpoint to create a film
 @app.post("/films", response_model=schemas.FilmOut)
 def create_film(film: schemas.FilmCreate, db: Session = Depends(get_db_session)):
@@ -41,7 +42,7 @@ def create_film(film: schemas.FilmCreate, db: Session = Depends(get_db_session))
 
 
 # Endpoint to delete all films
-@app.delete("/films")
+@app.delete("/films/")
 def delete_films(db: Session = Depends(get_db_session)):
     result = crud.delete_films(db)
     if result:
@@ -49,12 +50,27 @@ def delete_films(db: Session = Depends(get_db_session)):
     return {"message": "All films deleted"}
 
 
-# Endpoint to get all persons
-@app.get("/persons", response_model=schemas.PersonListOut)
-def read_persons(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):
-    persons = crud.get_persons(db, skip=skip, limit=limit)
+# Endpoint to delete one film
+@app.delete("/films/{film_id}")
+def delete_film(film_id: int, db: Session = Depends(get_db_session)):
+    film = crud.get_film_by_id(db, film_id=film_id)
+    if not film:
+        raise HTTPException(status_code=404, detail="Film not Found")
+    crud.delete_film(db, film_id)
+    return {"message": "Film was succesfully deleted!"}
+
+
+@app.get("/persons/")
+def read_persons_by_name(name: str = Query(None, description="Name of the person to search for"),
+                         db: Session = Depends(get_db_session)):
+    if name:
+        persons = crud.get_persons_by_name(db, name)
+    else:
+        persons = crud.get_persons(db)
+
     if not persons:
         raise HTTPException(status_code=404, detail="No persons found")
+
     return {"persons": persons}
 
 
