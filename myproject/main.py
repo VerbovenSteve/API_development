@@ -23,7 +23,7 @@ def get_db_session():
 
 
 # Endpoint to get all films
-@app.get("/films/", response_model=schemas.FilmListOut)
+@app.get("/films", response_model=schemas.FilmListOut)
 def read_films(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):
     films = crud.get_films(db, skip=skip, limit=limit)
     if not films:
@@ -32,7 +32,7 @@ def read_films(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_ses
 
 
 # Endpoint to create a film
-@app.post("/films/", response_model=schemas.FilmOut)
+@app.post("/films", response_model=schemas.FilmOut)
 def create_film(film: schemas.FilmCreate, db: Session = Depends(get_db_session)):
     db_film = crud.create_film(db, film)
     if db_film is None:
@@ -41,7 +41,7 @@ def create_film(film: schemas.FilmCreate, db: Session = Depends(get_db_session))
 
 
 # Endpoint to delete all films
-@app.delete("/films/")
+@app.delete("/films")
 def delete_films(db: Session = Depends(get_db_session)):
     result = crud.delete_films(db)
     if result:
@@ -50,7 +50,7 @@ def delete_films(db: Session = Depends(get_db_session)):
 
 
 # Endpoint to get all persons
-@app.get("/persons/", response_model=schemas.PersonListOut)
+@app.get("/persons", response_model=schemas.PersonListOut)
 def read_persons(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):
     persons = crud.get_persons(db, skip=skip, limit=limit)
     if not persons:
@@ -59,7 +59,7 @@ def read_persons(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_s
 
 
 # Endpoint to create a person
-@app.post("/persons/", response_model=schemas.PersonOut)
+@app.post("/persons", response_model=schemas.PersonOut)
 def create_person(person: schemas.PersonCreate, db: Session = Depends(get_db_session)):
     db_person = crud.create_person(db, person)
     if db_person is None:
@@ -68,7 +68,7 @@ def create_person(person: schemas.PersonCreate, db: Session = Depends(get_db_ses
 
 
 # Endpoint to delete all persons
-@app.delete("/persons/")
+@app.delete("/persons")
 def delete_persons(db: Session = Depends(get_db_session)):
     result = crud.delete_persons(db)
     if result:
@@ -77,7 +77,7 @@ def delete_persons(db: Session = Depends(get_db_session)):
 
 
 # Endpoint to get all starships
-@app.get("/starships/", response_model=schemas.StarshipListOut)
+@app.get("/starships", response_model=schemas.StarshipListOut)
 def read_starships(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):
     starships = crud.get_starships(db, skip=skip, limit=limit)
     if not starships:
@@ -86,7 +86,7 @@ def read_starships(skip: int = 0, limit: int = 100, db: Session = Depends(get_db
 
 
 # Endpoint to create a starship
-@app.post("/starships/", response_model=schemas.StarshipOut)
+@app.post("/starships", response_model=schemas.StarshipOut)
 def create_starship(starship: schemas.StarshipCreate, db: Session = Depends(get_db_session)):
     db_starship = crud.create_starship(db, starship)
     if db_starship is None:
@@ -95,7 +95,7 @@ def create_starship(starship: schemas.StarshipCreate, db: Session = Depends(get_
 
 
 # Endpoint to delete all starships
-@app.delete("/starships/")
+@app.delete("/starships")
 def delete_starships(db: Session = Depends(get_db_session)):
     result = crud.delete_starships(db)
     if result:
