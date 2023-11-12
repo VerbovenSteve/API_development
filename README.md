@@ -32,15 +32,34 @@ In het volgende deel zal ik alle functies laten zien van de interface.
 Deze post zal zorgen dat we een film in de databank kunnen zetten
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/5c03458c-620a-4ed0-aeda-50cc14dc322a)
 
+### error handeling post /films
+
+Als een film al bestaat in de database dan zal bij het opnieuw toevoegen een error komen. deze zal als volgt eruit zien.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/12271803-e734-46ff-9a24-8964b9de02bc)
+
+
 ### post /persons
 
 Deze post zorgt ervoor dat we een personage kunnen toevoegen aan een bepaald film id.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/fd733bfd-647c-4305-ba45-c99b5521e478)
 
+### error handeling post /persons
+
+Als een personage al in de database bestaat zal er een error komen deze ziet er uit als volgt.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/81b8bf8b-fc55-4307-a5c3-9e1b6be9ecd6)
+
+
+
 ### post /starships
 
 Deze post zal starships toevoegen aan een film via de film id.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/1f3f1c6b-1361-4d55-8179-c9b5afe2daef)
+
+### error handeling post /starships
+
+Als er een bepaald starship al in de database staat dan zal er een error gegenereerd worden deze ziet er als volgt uit.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/d78c9eee-1cf8-40d6-adec-71e58a603d0d)
+
 
 > we zullen nu verder gaan met de get requests. Dit wil zeggen dat we verschillende items uit de tabellen gaan halen.
 ## get
