@@ -1,4 +1,4 @@
-# Basisproject API Development Verboven Steve
+# Basisproject API Development
 ## Thema
 
 Voor mijn project heb ik gekozen voor Star Wars:
@@ -19,3 +19,4 @@ In de databank zitten 3 tabellen:
 In de databank kunnen kan je per film de personages en de Starships toevoegen. Via de Api kan je zowel ze oproepen of verwijderen en je kan ook de volledige database in zijn geheel ophalen.
 
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/11a26828-1db3-436a-aa37-368fae0a41c3)
+## link naar API: https://useritem-api-service-verbovensteve.cloud.okteto.net/docs 
