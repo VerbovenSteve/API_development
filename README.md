@@ -42,3 +42,17 @@ Deze post zorgt ervoor dat we een personage kunnen toevoegen aan een bepaald fil
 Deze post zal starships toevoegen aan een film via de film id.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/1f3f1c6b-1361-4d55-8179-c9b5afe2daef)
 
+> we zullen nu verder gaan met de get requests. Dit wil zeggen dat we verschillende items uit de tabellen gaan halen.
+## get
+
+### get /films
+
+Deze get request zal ervoor zorgen dat we alle films in de database kunnen ophalen.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/72100ca4-ad50-4d9d-94d6-c1ab20bc0fea)
+
+### get /persons/
+
+Deze request zal de persoon bij naam zoeken en uit de database ophalen.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/a44bb155-fc2c-47e2-a42d-e1cce146c07c)
+
+
