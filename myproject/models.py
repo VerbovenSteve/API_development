@@ -1,5 +1,5 @@
 from fastapi.dependencies import models
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Float
 from sqlalchemy.orm import relationship, Session
 from database import Base
 
