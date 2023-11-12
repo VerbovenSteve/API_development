@@ -106,7 +106,34 @@ Deze request haalt heel de database op met alle films, personages en starships.
 
 > Als laatste gaan we verder met de delete requests.
 
+## Delete 
 
+### delete /films/
 
+Deze delete zal alle films verwijderen.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/097fd5c4-0761-47dd-8d7c-8c5bec6406f1)
 
+### delete /films/{film_id}
 
+Als de film id niet bestaat en je wil deleten dan krijg je een error.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/f1393bd1-12fe-42ac-adbf-ce0611b16951)
+
+### delete /persons
+
+Deze delete zal alle persons verwijderen uit de database.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/4a654529-71c0-4069-bf14-78d7c325ec0b)
+
+### delete /starships
+
+Als je de starships wil verwijderen uit de database.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/d71ffcd8-13dc-45e7-9f9b-2f35dfb61128)
+
+# De database is terug leeg?
+
+Bij wijze van afsluiting laat ik graag nog zien dat de database terug volledig leeg is.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/b09a2f52-d08e-4756-bd9e-b75a5c7867f2)
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/158138d9-f76c-4797-ae1c-2e8f214096e3)
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/6101232b-6067-414e-b83a-b15b41ed417a)
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/3ef8f02e-5f3d-401b-b387-f4b70b38a9f1)
+> Zoals we kunnen zien in bovenstaande afbeeldingen is de data base volledig leeg en vinden we geen films, persons of starships meer.
+> Zodat jullie zelf zouden kunnen testen zal ik ook de database terug opvullen.
