@@ -1,6 +1,8 @@
+from fastapi.dependencies import models
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Session
 from database import Base
+
 
 
 class Film(Base):
@@ -11,6 +13,11 @@ class Film(Base):
 
     characters = relationship('Person', back_populates='film')
     starships = relationship('Starship', back_populates='film')
+
+    def get_characters_and_starships(self, db: Session):
+        characters = db.query(Person).filter_by(film_id=self.id).all()
+        starships = db.query(Starship).filter_by(film_id=self.id).all()
+        return characters, starships
 
 class Person(Base):
     __tablename__ = 'personages'

@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 
+import models
 from models import Film, Person, Starship
 from schemas import FilmCreate, PersonCreate, StarshipCreate
 
@@ -56,3 +57,14 @@ def get_starships(db: Session, skip: int = 0, limit: int = 10):
 def delete_starships(db: Session):
     db.query(Starship).delete()
     db.commit()
+
+
+def get_persons_and_starships_in_film(db: Session, film_id: int):
+    film = db.query(models.Film).filter(models.Film.id == film_id).first()
+    if film is None:
+        return None
+
+    persons = db.query(models.Person).filter(models.Person.film_id == film_id).all()
+    starships = db.query(models.Starship).filter(models.Starship.film_id == film_id).all()
+
+    return persons, starships

@@ -103,5 +103,23 @@ def delete_starships(db: Session = Depends(get_db_session)):
     return {"message": "All starships deleted"}
 
 
+@app.get("/films/all_with_characters_starships")
+def get_all_films_with_characters_starships(db: Session = Depends(get_db_session)):
+    films = db.query(models.Film).all()
+    film_data = []
+
+    for film in films:
+        characters, starships = crud.get_persons_and_starships_in_film(db, film.id)
+        film_info = {
+            "film_id": film.id,
+            "title": film.title,
+            "release_year": film.release_year,
+            "characters": characters,
+            "starships": starships
+        }
+        film_data.append(film_info)
+
+    return film_data
+
 if __name__ == "__main__":
     models.Base.metadata.create_all(bind=engine)
