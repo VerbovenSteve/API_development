@@ -22,3 +22,13 @@ In de databank kunnen kan je per film de personages en de Starships toevoegen. V
 ### link naar API:
 
 https://useritem-api-service-verbovensteve.cloud.okteto.net/docs 
+
+In het volgende deel zal ik alle functies laten zien van de interface.
+> we beginnen bij de post requests. Dit wil zeggen het opvullen van de verschillende tabellen
+## post 
+
+post /films
+Deze post zal zorgen dat we een film in de databank kunnen zetten
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/5c03458c-620a-4ed0-aeda-50cc14dc322a)
+
+
