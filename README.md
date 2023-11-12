@@ -69,15 +69,33 @@ Als er een bepaald starship al in de database staat dan zal er een error gegener
 Deze get request zal ervoor zorgen dat we alle films in de database kunnen ophalen.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/72100ca4-ad50-4d9d-94d6-c1ab20bc0fea)
 
+### Error handeling get /films
+
+Als we een film gaan zoeken met een id dat niet in de database te vinden is krijgen we een error.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/726c8cc3-1f04-43a1-a202-ca1eaf8bc57c)
+
+
 ### get /persons/
 
 Deze request zal de persoon bij naam zoeken en uit de database ophalen.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/a44bb155-fc2c-47e2-a42d-e1cce146c07c)
 
+### Error handeling get /persons/
+
+Als we de naam van een personage dat niet bestaat invoeren dan krijgen we een error.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/af87e3c6-7692-433b-b2f0-4984fa650d07)
+
+
 ### get /starships
 
 Deze request haalt alle starships uit de database.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/86f81e34-6cbf-4fc2-9027-982e8674314c)
+
+### Error handeling starships
+
+Als je verkeerde skip en limit ingeeft voor de id van de starship krijg je een error.
+![image](https://github.com/VerbovenSteve/api_development/assets/113888137/f8683fc3-46b2-4cf8-a072-80e77ac87949)
+
 
 ### get /films/all_with_characters_starships
 
