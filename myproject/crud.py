@@ -5,6 +5,17 @@ from models import Film, Person, Starship
 from schemas import FilmCreate, PersonCreate, StarshipCreate
 
 
+def get_films(db: Session, skip: int = 0, limit: int = 10):
+    return db.query(Film).offset(skip).limit(limit).all()
+
+
+def get_persons(db: Session, skip: int = 0, limit: int = 10):
+    return db.query(Person).offset(skip).limit(limit).all()
+
+
+def get_starships(db: Session, skip: int = 0, limit: int = 10):
+    return db.query(Starship).offset(skip).limit(limit).all()
+
 # CRUD operations for films
 def create_film(db: Session, film: FilmCreate):
     existing_film = db.query(models.Film).filter(models.Film.title == film.title).first()
@@ -41,16 +52,7 @@ def create_starship(db: Session, starship: StarshipCreate):
     return db_starship
 
 
-def get_films(db: Session, skip: int = 0, limit: int = 10):
-    return db.query(Film).offset(skip).limit(limit).all()
 
-
-def get_persons(db: Session, skip: int = 0, limit: int = 10):
-    return db.query(Person).offset(skip).limit(limit).all()
-
-
-def get_starships(db: Session, skip: int = 0, limit: int = 10):
-    return db.query(Starship).offset(skip).limit(limit).all()
 
 
 def delete_films(db: Session):
