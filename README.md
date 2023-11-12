@@ -60,7 +60,7 @@ Deze request zal de persoon bij naam zoeken en uit de database ophalen.
 Deze request haalt alle starships uit de database.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/86f81e34-6cbf-4fc2-9027-982e8674314c)
 
-###get /films/all_with_characters_starships
+### get /films/all_with_characters_starships
 
 Deze request haalt heel de database op met alle films, personages en starships.
 ![image](https://github.com/VerbovenSteve/api_development/assets/113888137/c964119b-af2e-4634-a43c-5d5dd7e72e54)
