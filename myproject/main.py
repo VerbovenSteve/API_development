@@ -21,7 +21,7 @@ def get_db_session():
     finally:
         db.close()
 
-
+# Endpoints
 # Endpoint to get all films
 @app.get("/films", response_model=schemas.FilmListOut)
 def read_films(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_session)):
